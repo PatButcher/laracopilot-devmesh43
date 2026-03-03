@@ -89,7 +89,7 @@ class TrackController extends Controller
             'audio_file' => 'required|file|mimes:mp3,wav,ogg,flac,aac|max:51200',
             'cover_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'tags' => 'nullable|string|max:500',
-            'is_published' => 'boolean',
+            // 'is_published' => 'boolean',
         ]);
 
         $audioFile = $request->file('audio_file');
@@ -121,7 +121,8 @@ class TrackController extends Controller
             'audio_path' => $audioPath,
             'cover_image' => $coverPath,
             'tags' => $validated['tags'] ?? null,
-            'is_published' => $request->has('is_published') ? true : false,
+            // 'is_published' => $request->has('is_published') ? true : false,
+            'is_published' => true,
             'duration' => 0,
         ]);
 
