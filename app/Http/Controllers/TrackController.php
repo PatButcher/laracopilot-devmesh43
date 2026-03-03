@@ -129,6 +129,8 @@ class TrackController extends Controller
         return redirect()->route('tracks.mine')->with('success', 'Track uploaded successfully!');
     }
 
+    // TODO: FIX is_published REQUEST.
+
     public function myTracks()
     {
         if (!Auth::check()) {
