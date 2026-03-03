@@ -47,7 +47,7 @@
         <!-- Live Waveform Demo -->
         <div class="flex items-end justify-center space-x-1 h-12 mb-4">
             @for($i = 0; $i < 40; $i++)
-            <div style="width:4px; height:{{ rand(8, 44) }}px; background: linear-gradient(to top, #8B5CF6, #EC4899); border-radius:2px; animation: wave {{ number_format(0.6 + ($i * 0.05) % 0.8, 2) }}s ease-in-out infinite alternate; animation-delay: {{ number_format(($i * 0.04) % 0.5, 2) }}s; opacity: 0.8;"></div>
+                <div style="width: 4px; height: {{ rand(8, 44) }}px; background: linear-gradient(to top, #8B5CF6, #EC4899); border-radius: 2px; animation: wave {{ number_format(0.6 + fmod($i * 0.05, 0.8), 2) }}s ease-in-out infinite alternate; animation-delay: {{ number_format(fmod($i * 0.04, 0.5), 2) }}s; opacity: 0.8;"></div>
             @endfor
         </div>
         <p class="text-xs text-gray-500">Live audio visualization</p>
